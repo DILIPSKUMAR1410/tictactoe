@@ -43,16 +43,12 @@ class App extends Component {
         update_board[index] = this.state.player_one_symbol;
         
         // Update the state
-        this.setState({
-          board: update_board,
-        });
+        this.setState({board: update_board});
 
         let ai_index = find_best_move(update_board);
         if (ai_index !== -4) update_board[ai_index] = this.state.player_two_symbol; 
 
-        this.setState({
-          board: update_board,
-        });
+        this.setState({board: update_board});
       }
     }
   }
@@ -179,7 +175,9 @@ function evaluate(mat, depth) {
 }
 
 function minmax(mat, depth, get_max) {
-  if (hasMovesLeft(mat) === false) return 0;
+  if (hasMovesLeft(mat) === false) {
+    return evaluate(mat, depth);    
+  } 
 
   let val = evaluate(mat, depth);
 
