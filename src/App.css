@@ -1,5 +1,6 @@
 .master {
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .side-bar {
@@ -41,7 +42,6 @@
 }
 
 .reset-button {
-  padding: 2px;
   display: flex;
   width: 120px;
   height: 60px;
@@ -59,6 +59,12 @@
       background-color: #026F1B;
 }
 
+.button-line {
+  display: flex;
+  width: 500px;
+  padding-top: 20px;
+}
+
 .active-singleplayer-button {
   padding: 2px;
   display: flex;
@@ -73,7 +79,6 @@
   color: white;
   text-shadow: 3px 2px gray; 
 }
-
 
 .deactived-singleplayer-button {
   padding: 2px;
@@ -104,7 +109,6 @@
   color: white;
   text-shadow: 3px 2px gray; 
 }
-
 
 .deactived-multiplayer-button {
   padding: 2px;

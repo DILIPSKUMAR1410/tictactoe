@@ -87,10 +87,12 @@ class App extends Component {
         </div>
         <div className="side-bar">
           <div className="reset-button" onClick={this.handleResetButton}> Reset </div>
-          <div className={this.state.vsPC === null ? "active-singleplayer-button" : "deactived-singleplayer-button"} 
-          onClick={this.handleSinglePlayerButton}> Single Player </div>
-          <div className={this.state.vsPC === null ? "active-multiplayer-button" : "deactived-multiplayer-button"} 
-          onClick={this.handleMultiPlayerButton}> Multiplayer </div>
+          <div className="button-line">
+            <div className={this.state.vsPC === null ? "active-singleplayer-button" : "deactived-singleplayer-button"} 
+            onClick={this.handleSinglePlayerButton}> Single Player </div>
+            <div className={this.state.vsPC === null ? "active-multiplayer-button" : "deactived-multiplayer-button"} 
+            onClick={this.handleMultiPlayerButton}> Multiplayer </div>
+          </div>
         </div>
       </div>
     );
