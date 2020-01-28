@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "async": "^3.1.1",
+    "blockstack": "^19.3.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "1.0.13"
   },
   "scripts": {
