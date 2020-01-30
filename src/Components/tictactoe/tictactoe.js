@@ -15,7 +15,8 @@ class App extends Component {
     this.handleResetButton = this.handleResetButton.bind(this);
     this.handleSinglePlayerButton = this.handleSinglePlayerButton.bind(this);
     this.store = this.store.bind(this);
-
+    this.gotoscoreboard = this.gotoscoreboard.bind(this);
+    this.gohome = this.gohome.bind(this);
     this.state = {
       vsPC: null,
       player_one_symbol: 'X',
@@ -83,15 +84,27 @@ class App extends Component {
       temp=JSON.parse(localStorage.getItem("tictactoe"));
     }
     if(have_winner==="O")
+    {
       temp[0]++;
+      alert("Computer won");
+    }
     else if(have_winner==="X")
+    {
       temp[1]++;
+      alert("You won! Congrats!!");
+    }
     userSession
-    .putFile("Myjournal.json", JSON.stringify(temp), options)
+    .putFile("Tictactoe.json", JSON.stringify(temp), options)
     .then(() => {
       localStorage.setItem("tictactoe", JSON.stringify(temp));
       })
     // console.log(have_winner);
+  }
+  gotoscoreboard(){
+    this.props.history.push("/scoreboard");
+  }
+  gohome(){
+    this.props.history.push("/");
   }
   render() {
     let have_winner = winner(this.state.board);
@@ -101,6 +114,10 @@ class App extends Component {
 
     return (
       <div className="master">
+        <div className="header">
+          <img src={require("../../Assets/tictactoe.png")} onClick={this.gohome} />
+          tictactoe
+        </div>
         <div className="game">
           <div className="board">
             {this.state.board.map((cell, index) => {
@@ -109,6 +126,7 @@ class App extends Component {
           </div>
         </div>
         <div className="side-bar">
+          <div className="reset-button" onClick={this.gotoscoreboard}> Scoreboard </div>
           <div className="reset-button" onClick={this.handleResetButton}> Reset </div>
           <div className="button-line">
             <div className={this.state.vsPC === null ? "active-singleplayer-button" : "deactived-singleplayer-button"} 
