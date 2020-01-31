@@ -59,6 +59,7 @@
   color: black;
   margin-left: 5vw;
   margin-bottom:2vw;
+  cursor: pointer;
 }
 
 .reset-button:active {
@@ -84,6 +85,7 @@
   border-radius: 3px;
   color: black;
   margin-left: 5vw;
+  cursor: pointer;
 }
 
 .deactived-singleplayer-button {
@@ -99,6 +101,7 @@
   border-radius: 3px;
   color: white;
   margin-left: 5vw;
+  cursor: pointer;
 
 }
 
@@ -140,4 +143,5 @@
 .header img{
   width:6vw;
   margin:1vw 1vw 0 1vw;
+  cursor: pointer;
 }

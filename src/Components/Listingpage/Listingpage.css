@@ -52,4 +52,5 @@
   .header img{
     width:6vw;
     margin:1vw 1vw 0 1vw;
+    cursor: pointer;
   }
